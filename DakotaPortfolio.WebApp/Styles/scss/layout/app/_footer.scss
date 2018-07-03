@@ -1,0 +1,19 @@
+﻿.footer {
+    display: block;
+    font-size: rem(settings(font, size, x-small));
+
+    &__social {
+        display: block;
+        margin-bottom: rem(8);
+
+        li {
+            display: inline-block;
+
+            @include media(">small") {
+                &:hover {
+                    color: settings(font, color, secondary);
+                }
+            }
+        }
+    }
+}

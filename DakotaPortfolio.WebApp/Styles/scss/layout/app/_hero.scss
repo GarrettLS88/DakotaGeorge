@@ -1,0 +1,90 @@
+﻿.hero {
+    &__gap {
+        display: block;
+        height: 100vh;
+    }
+
+    &__logo {
+        max-width: rem(100);
+        width: 100%;
+    }
+
+    &__layers {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        text-align: center;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        width: 100%;
+        text-align: center;
+        padding: rem(16);
+        
+        @include text-shadow();
+
+        @include media("<=small") {
+            right: 0;
+            text-align: center;
+            font-size: 70%;
+        }
+
+        h1 {
+            display: block;
+            text-transform: none;
+            color: settings(font, color, secondary);
+        }
+    }
+
+    &__desc {
+        display: inline-block;
+        text-transform: none;
+    }
+
+    &__start {
+        position: absolute;
+        width: 100%;
+        bottom: rem(50);
+        z-index: 1;
+        text-align: center;
+
+        &-btn {
+            cursor: pointer;
+            @include text-shadow(0, 0, 4px);
+            @include transition();
+
+            @include media(">=desktop") {
+                &:hover {
+                    color: settings(font, color, secondary);
+                    text-shadow: none;
+                }
+            }
+        }
+    }
+
+    &__layer {
+        display: block;
+        height: 100%;
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
+
+        &.bg {
+            height: 100%;
+            background-image: url('../images/iceland-bg.jpg');
+
+            &.zoom {
+                transform: matrix(1.1, 0, 0, 1.1, 0, 0);
+            }
+        }
+    }
+}

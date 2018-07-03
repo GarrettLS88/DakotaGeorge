@@ -1,0 +1,63 @@
+﻿.expertise {
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: rem(32) auto;
+        max-width: rem(900);
+
+        @include media("<=tablet") {
+            flex-direction: column;
+        }
+
+        img {
+            height: 100%;
+        }
+
+        .col {
+            &--one {
+                flex-grow: 1;
+                text-align: left;
+                display: flex;
+
+                * {
+                    margin: auto 0;
+                }
+
+                @include media("<=tablet") {
+                    margin-bottom: rem(16);
+                }
+            }
+
+            &--two {
+                flex-grow: 2;
+                text-align: justify;
+                max-width: rem(500);
+
+                @include media("<=tablet") {
+                    text-align: center;
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+
+            .col {
+                &--one {
+                    order: 2;
+                    text-align: right;
+                    justify-content: flex-end;
+
+                    @include media("<=tablet") {
+                        order: 1;
+                    }
+                }
+
+                &--two {
+                    order: 1;
+                }
+            }
+        }
+    }
+}

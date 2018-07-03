@@ -1,0 +1,94 @@
+$settings: (
+    font: (
+        family: (
+            primary: 'Roboto'
+        ),
+        weight: (
+            thin: 100,
+            light: 200,
+            lighter: 300,
+            regular: 400,
+            medium: 500,
+            bold: 700,
+            ultra-bold: 900
+        ),
+        size: (
+            icon-xxl: 64,
+            h1: 64,
+            icon-xl: 40,
+            h2: 48,
+            icon-l: 32,
+            h3: 32,
+            icon: 24,
+            h4: 24,
+            default: 16,
+            small: 14,
+            x-small: 12,
+            x-x-small: 9
+        ),
+        color: (
+            white: #FFFFFF,
+            black: #000000,
+            success: #00A7A7,
+            warning: #E4CB4C,
+            error: #F24F4F,
+            primary: #1E1E1E,
+            secondary: #00A7A7,
+            links: #008080
+        )
+    ),
+    layout: (
+        color: (
+            white: #FFFFFF,
+            black: #000000,
+            success: #00A7A7,
+            warning: #E4CB4C,
+            error: #F24F4F,
+            primary: #1E1E1E,
+            secondary: #00A7A7,
+        ),
+        view: (
+            max-width: 1920,
+            x-large: 1200,
+            large: 1000,
+            medium: 800,
+            small: 600,
+            x-small: 400
+        ),
+        border: (
+            radius: 0
+        )
+    ),
+    shadow: (
+        box: (
+            top: 0,
+            left: 0,
+            blur: 3px,
+            spread: 0,
+            color: #000000,
+            fade: 0
+        ),
+        text: (
+            top: 0,
+            left: 0,
+            blur: 3px,
+            color: #000000,
+            fade: 0.5
+        )
+    ),
+    transition: (
+        duration: .2s,
+        function: ease-in-out
+    ),
+    breakpoints: (
+        full: em(1920),
+        x-large: em(1200),
+        desktop: em(1024), //Desktops 1024 +
+        large: em(1000),
+        medium: em(800),
+        tablet: em(768), //Tablets 768 - 1024
+        small: em(600)
+    )
+);
+// iMedia.
+$breakpoints: map-get($settings, breakpoints);

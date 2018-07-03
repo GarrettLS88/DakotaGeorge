@@ -1,0 +1,181 @@
+﻿.header {
+    height: 70px;
+    color: settings(font, color, white);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(transparentize(settings(layout, color, black), 0.5), transparent);
+
+    &__logo {
+        height: 100%;
+        padding: rem(20);
+
+        @include media("<=small") {
+            display: none;
+        }
+    }
+
+    &__padding {
+        height: 70px;
+        width: 100%;
+        display: block;
+    }
+
+    .col {
+        height: 100%;
+    }
+
+    &__mobile {
+        display: none;
+        height: 100%;
+
+        @include media("<=small") {
+            display: block;
+        }
+
+        &-text {
+
+            &-inner {
+                display: flex;
+                height: 100%;
+                padding: rem(16);
+
+                span {
+                    margin: auto 0;
+                }
+            }
+        }
+
+        &-btn {
+
+            &-inner {
+                display: flex;
+                justify-content: flex-end;
+                height: 100%;
+                padding: rem(16);
+
+                .fa {
+                    cursor: pointer;
+                    margin: auto 0;
+                }
+            }
+
+            &-close {
+                display: none;
+                cursor: pointer;
+                text-align: right;
+
+                @include media("<=small") {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    nav {
+        height: 100%;
+        padding: 0 rem(16);
+        text-transform: uppercase;
+
+        @include media("<=small") {
+
+            .col {
+                height: auto;
+            }
+
+            transform: translateX(100%);
+            min-width: rem(200);
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: settings(layout, color, primary);
+            padding: rem(16);
+            border-left: 2px solid settings(layout, color, secondary);
+            @include transition();
+
+            &.active {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &.alt {
+        @include media(">small") {
+            color: settings(font, color, primary);
+
+            .header__links > li::after {
+                background: linear-gradient(90deg, darken(settings(layout, color, secondary), 10%), settings(layout, color, secondary));
+            }
+        }
+
+        @include media("<=small") {
+            .header__mobile {
+                color: settings(font, color, primary);
+            }
+        }
+
+        background: transparentize(settings(layout, color, white), 0.2);
+        @include box-shadow();
+    }
+
+    &__links {
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+
+        @include media("<=small") {
+            flex-direction: column;
+            height: auto;
+        }
+
+        > li {
+            position: relative;
+            display: inline-block;
+            padding: 0 rem(8);
+            cursor: pointer;
+            margin: auto 0;
+
+            @include media("<=small") {
+                display: block;
+                margin-bottom: rem(8);
+                padding: 0;
+            }
+
+            @include media(">small") {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: rem(8);
+                    right: 100%;
+                    height: 2px;
+                    background: linear-gradient(90deg, lighten(settings(layout, color, secondary), 15%), settings(layout, color, secondary));
+                    @include transition();
+                }
+
+                &:hover {
+
+                    &::after {
+                        right: rem(8);
+                    }
+                }
+            }
+        }
+    }
+
+    &__social {
+        display: none;
+        padding: rem(16) 0;
+        color: settings(font, color, secondary);
+
+        @include media("<=small") {
+            display: block;
+        }
+
+        > li {
+            display: inline-block;
+        }
+    }
+}

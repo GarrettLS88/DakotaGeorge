@@ -1,0 +1,28 @@
+﻿.floater {
+    position: relative;
+    margin: rem(8);
+
+    &__label {
+        position: absolute;
+        left: rem(16);
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        @include transition();
+    }
+
+    &__txt {
+        top: rem(16);
+    }
+
+    &__input {
+        padding-top: rem(20);
+
+        &:focus + label, &.full + label {
+            top: 2px;
+            color: settings(font, color, secondary);
+            transform: none;
+            font-size: rem(settings(font, size, x-small));
+        }
+    }
+}

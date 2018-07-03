@@ -1,0 +1,38 @@
+﻿.col {
+    display: inline-block;
+    vertical-align: top;
+
+    &-f {
+        @include media("<=full") {
+            @include grid12();
+        }
+    }
+
+    &-xl {
+        @include media("<=x-large") {
+            @include grid12();
+        }
+    }
+
+    &-l {
+        @include media("<=large") {
+            @include grid12();
+        }
+    }
+
+    &-m {
+        @include media("<=medium") {
+            @include grid12();
+        }
+    }
+
+    &-s {
+        @include media("<=small") {
+            @include grid12();
+        }
+    }
+
+    &-right {
+        text-align: right;
+    }
+}

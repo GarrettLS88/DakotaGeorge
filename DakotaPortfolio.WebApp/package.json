@@ -1,0 +1,28 @@
+{
+  "name": "myportfolio",
+  "version": "1.0.0",
+  "description": "My Career Portfolio Web App",
+  "repository": {
+    "type": "git"
+  },
+  "author": "Garrett",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "run-sequence": "latest",
+    "smooth-scroll": "latest",
+    "syncy": "latest",
+    "tsify": "latest",
+    "typescript": "latest",
+    "vinyl-buffer": "latest",
+    "vinyl-source-stream": "latest"
+  }
+}

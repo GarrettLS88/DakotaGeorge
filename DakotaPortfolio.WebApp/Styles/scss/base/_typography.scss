@@ -1,0 +1,5 @@
+@include font-face('Roboto', '../fonts/roboto/Roboto-Thin', settings(font, weight, thin), normal, woff woff2);
+@include font-face('Roboto', '../fonts/roboto/Roboto-Light', settings(font, weight, light), normal, woff woff2);
+@include font-face('Roboto', '../fonts/roboto/Roboto-Regular', settings(font, weight, regular), normal, woff woff2);
+@include font-face('Roboto', '../fonts/roboto/Roboto-Medium', settings(font, weight, medium), normal, woff woff2);
+@include font-face('Roboto', '../fonts/roboto/Roboto-Bold', settings(font, weight, bold), normal, woff woff2);

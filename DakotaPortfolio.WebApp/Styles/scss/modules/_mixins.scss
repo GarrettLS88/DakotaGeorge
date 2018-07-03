@@ -1,0 +1,107 @@
+// main: _index.scss
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+// String Replace
+@function str-replace($string, $search, $replace: "") {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+// default box shadow
+@mixin box-shadow( $inset: false, $top: settings(shadow, box, top), $left: settings(shadow, box, left), $blur: settings(shadow, box, blur), $spread: settings(shadow, box, spread), $color: settings(shadow, box, color), $fade: settings(shadow, box, fade)) {
+    @if $inset {
+        box-shadow: inset $top $left $blur $spread transparentize($color, $fade);
+    }
+    @else {
+        box-shadow: $top $left $blur $spread transparentize($color, $fade);
+    }
+}
+
+// default text shadow
+@mixin text-shadow( $top: settings(shadow, text, top), $left: settings(shadow, text, left), $blur: settings(shadow, text, blur), $color: settings(shadow, text, color), $fade: settings(shadow, text, fade)) {
+    text-shadow: $top $left $blur transparentize($color, $fade);
+}
+
+// default transition
+@mixin transition($func: settings(transition, function), $css: all, $time: settings(transition, duration)) {
+    transition: $css $time $func;
+}
+
+// Font Face
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    $extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") );
+
+    $formats: ( otf: "opentype", ttf: "truetype" );
+
+    @each $ext in $exts {
+        $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}
+
+@mixin grid12() {
+    &-1 {
+        width: gridPerc(1);
+    }
+
+    &-2 {
+        width: gridPerc(2);
+    }
+
+    &-3 {
+        width: gridPerc(3);
+    }
+
+    &-4 {
+        width: gridPerc(4);
+    }
+
+    &-5 {
+        width: gridPerc(5);
+    }
+
+    &-6 {
+        width: gridPerc(6);
+    }
+
+    &-7 {
+        width: gridPerc(7);
+    }
+
+    &-8 {
+        width: gridPerc(8);
+    }
+
+    &-9 {
+        width: gridPerc(9);
+    }
+
+    &-10 {
+        width: gridPerc(10);
+    }
+
+    &-11 {
+        width: gridPerc(11);
+    }
+
+    &-12 {
+        width: gridPerc(12);
+    }
+}

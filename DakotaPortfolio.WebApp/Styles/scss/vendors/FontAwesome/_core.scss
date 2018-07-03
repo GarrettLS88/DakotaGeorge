@@ -1,0 +1,23 @@
+// Base Class Definition
+// -------------------------
+
+.#{$fa-css-prefix} {
+    display: inline-block;
+    font: normal normal normal rem(settings(font, size, icon))/1 FontAwesome; // shortening font declaration
+    text-rendering: auto; // optimizelegibility throws things off #1094
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1;
+
+    &-l {
+        font-size: rem(settings(font, size, icon-l));
+    }
+
+    &-xl {
+        font-size: rem(settings(font, size, icon-xl));
+    }
+
+    &-xxl {
+        font-size: rem(settings(font, size, icon-xxl));
+    }
+}

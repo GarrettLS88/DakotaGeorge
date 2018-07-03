@@ -1,0 +1,25 @@
+﻿.btn {
+    display: inline-block;
+    padding: rem(8) rem(16);
+    text-transform: uppercase;
+    font-size: rem(settings(font, size, small));
+    font-weight: settings(font, weight, bold);
+    cursor: pointer;
+    background-color: settings(layout, color, secondary);
+    color: settings(font, color, white);
+    @include transition();
+
+    @include media(">=desktop") {
+        &:hover {
+            background-color: darken(settings(layout, color, secondary), 5%);
+        }
+    }
+
+    &-cntr {
+        text-align: center;
+    }
+
+    &-space {
+        margin-top: rem(32);
+    }
+}

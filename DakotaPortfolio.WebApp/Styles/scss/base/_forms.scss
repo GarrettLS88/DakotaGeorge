@@ -1,0 +1,43 @@
+﻿input, textarea {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid settings(layout, color, white);
+    border-radius: 5px;
+    padding: rem(8) rem(16);
+    color: inherit;
+    font-family: inherit;
+    font-size: rem(settings(font, size, small));
+    font-weight: inherit;
+
+    &:focus {
+        border-color: lighten(settings(layout, color, secondary), 15%);
+        @include box-shadow(false, 0, 0, 3px, 0, lighten(settings(layout, color, secondary), 15%), 0);
+    }
+}
+
+textarea {
+    resize: none;
+    min-height: rem(175);
+}
+
+button {
+    border: none;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+label {
+    display: block;
+    
+    font-size: rem(settings(font, size, small));
+
+    &.req::after {
+        content: '*';
+        color: settings(font, color, error);
+        position: absolute;
+        right: rem(-16);
+        top: 0;
+    }
+}

@@ -1,0 +1,130 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: settings(font, weight, medium);
+}
+
+h1 {
+    font-size: em(settings(font, size, h1));
+}
+
+h2 {
+    font-size: em(settings(font, size, h2));
+}
+
+h3 {
+    font-size: em(settings(font, size, h3));
+}
+
+h4 {
+    font-size: rem(settings(font, size, h4));
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 100%;
+
+    @include media("<=desktop") {
+        font-size: 90%;
+    }
+
+    @include media("<=tablet") {
+        font-size: 80%;
+    }
+}
+
+body {
+    font-family: settings(font, family, primary);
+    font-weight: settings(font, weight, regular);
+    line-height: 1.5;
+    font-style: normal;
+    background-color: settings(layout, color, primary);
+    color: settings(font, color, white);
+    margin: 0;
+    letter-spacing: 1px;
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p {
+    margin: rem(16) 0;
+
+    & + p {
+        margin-top: 0;
+    }
+
+    &.fine {
+        font-size: rem(settings(font, size, x-small));
+
+        .req {
+            color: settings(font, color, error);
+        }
+    }
+}
+
+a {
+    outline: 0;
+    color: inherit;
+    text-decoration: none;
+
+    &.clr {
+        color: settings(font, color, links);
+    }
+}
+
+i {
+    font-style: normal;
+}
+
+hr {
+    -webkit-margin-before: rem(30);
+    -webkit-margin-after: rem(30);
+    margin: rem(30) auto;
+    border: none;
+    height: 1px;
+    max-width: rem(80);
+    width: 100%;
+    background-color: settings(layout, color, white);
+}
+
+img {
+    border: 0;
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+noscript {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: rem(16) 0;
+    color: settings(font, color, error);
+}

@@ -1,0 +1,43 @@
+
+//main: _index.scss
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+//Get config variables
+@function settings($a, $b, $c:null) {
+  @if ($c != null) {
+    @return map-get(map-get(map-get($settings, $a), $b), $c);
+  }
+  @else {
+    @return map-get(map-get($settings, $a), $b);
+  }
+}
+
+@function em($pixels, $context: 16) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+@function rem($pixels, $context: 16) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@function gridPerc($width, $maxWidth: 12) {
+    @return percentage($width / $maxWidth);
+}

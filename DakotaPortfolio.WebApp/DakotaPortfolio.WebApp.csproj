@@ -1,15 +1,43 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Styles\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\FontAwesome\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\FontAwesome\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\FontAwesome\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\FontAwesome\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\FontAwesome\fontawesome-webfont.woff2" />
+    <None Include="wwwroot\fonts\FontAwesome\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Bold.woff" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Bold.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Light.woff" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Light.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Medium.woff" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Medium.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Regular.woff" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Regular.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Thin.woff" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Thin.woff2" />
+    <None Include="wwwroot\maps\app.js.map" />
+    <None Include="wwwroot\maps\styles.css.map" />
   </ItemGroup>
 
 </Project>
