@@ -55,7 +55,7 @@ namespace DakotaPortfolio.WebApp.Services
             {
                 IsBodyHtml = true,
                 Sender = new MailAddress(_configuration["EmailService:Error:From"]),
-                Subject = $"{_configuration["Website:Name"]} - {excep.Message}",
+                Subject = $"{_configuration["Website:Url"]} - {excep.Message}",
                 Priority = MailPriority.High,
                 Body = body
             };

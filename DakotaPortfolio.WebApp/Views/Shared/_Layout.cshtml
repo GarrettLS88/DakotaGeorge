@@ -1,10 +1,23 @@
-﻿<!DOCTYPE html>
+﻿@model GenericHomeVM
+
+@{ 
+    Schema schema = Model.Site.Schemas.FirstOrDefault();
+    ICollection<Meta> metas = Model.Site.Metas;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Dakota George | Graphic Designer - @ViewData["Title"]</title>
+
+    @foreach (Meta meta in metas)
+
+    {
+        <meta name="@meta.Name" content="@meta.Content" />
+    }
 
     <link rel="stylesheet" href="~/css/styles.css" />
 </head>
@@ -15,20 +28,23 @@
         @Html.Partial("_Footer")
     </div>
 
-    <script type="application/ld+json">
-        {
-        "@@context":"http://schema.org",
-        "@@type":"WebSite",
-        "name":"",
-        "headline":"",
-        "author":{
-        "@@type":"Person",
-        "name":""
-        },
-        "description":"",
-        "url":""
-        }
-    </script>
+    @if (schema != null)
+    {
+        <script type="application/ld+json">
+            {
+            "@@context":"http://schema.org",
+            "@@type":"WebSite",
+            "name":"@schema.Name",
+            "headline":"@schema.Headline",
+            "description":"@schema.Description",
+            "url":"@schema.Url"
+            "author":{
+            "@@type":"Person",
+            "name":"@schema.Person"
+            }
+            }
+        </script>
+    }
 
     <script src="~/js/app.js" asp-append-version="true"></script>
 </body>

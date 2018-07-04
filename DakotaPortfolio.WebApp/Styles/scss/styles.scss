@@ -1,11 +1,10 @@
 // Utilities
 @import 'modules/index';
-@import 'vendors/iMedia/iMedia';
 // 3rd Party
 @import 'vendors/FontAwesome/fontawesome';
-@import 'vendors/Alertify/index';
-@import 'vendors/MediumJS/mediumjs';
+@import 'vendors/iMedia/iMedia';
 // Main
 @import 'base/index';
 @import 'layout/app/index';
-@import 'components/index';
+@import 'layout/home/index';
+//@import 'components/index';

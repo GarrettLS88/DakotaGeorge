@@ -1,3 +1,43 @@
-﻿<div class="header">
+﻿@{ 
+    string controller = ViewContext.RouteData.Values["Controller"].ToString();
+}
 
+@if (controller == "Home")
+{
+    <div class="header__padding"></div>
+}
+
+<div class="header">
+    <div class="header__mobile">
+        <div class="header__mobile-text col col-s-6">
+            <div class="header__mobile-text-inner">
+                <span>Dakota George</span>
+            </div>
+        </div><div class="header__mobile-btn col col-s-6">
+            <div class="header__mobile-btn-inner">
+                <i class="fa fa-navicon" data-menu-open="nav" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="header__mobile-btn-close"><i class="fa fa-long-arrow-right" data-menu-close="nav" aria-hidden="true"></i></div>
+        <div class="col col-f-6 col-s-12">
+            <div class="header__name">
+                <div class="header__name-inner">
+                    <span>Dakota George</span>
+                </div>
+            </div>
+            <!--<img class="header__logo" src="~/images/logo.png" />-->
+        </div><div class="col col-f-6 col-s-12">
+            <ul class="header__links">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Portfolio", "Portfolio", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            <ul class="header__social">
+                <!--<li><a href="https://www.linkedin.com/in/garrett-shipp-288729a8/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>-->
+            </ul>
+        </div>
+    </nav>
 </div>

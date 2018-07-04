@@ -21,13 +21,20 @@ namespace PortfolioGS.WebApp.Services
             // [Transient] lifetime services are created each time they are requested.
             //  This lifetime works best for lightweight, stateless services.
 
-            SmtpClient smptClient = new SmtpClient("smtp.gmail.com", 587)
+            Uri endPoint = new Uri(configuration["RESTAPI:EndPoint"]);
+            HttpClient httpClient = new HttpClient()
+            {
+                BaseAddress = endPoint
+            };
+
+            SmtpClient smptClient = new SmtpClient(configuration["EmailService:NetworkCredential:Host"], Convert.ToInt32(configuration["EmailService:NetworkCredential:Port"]))
             {
                 Credentials = new NetworkCredential(configuration["EmailService:NetworkCredential:Email"], configuration["EmailService:NetworkCredential:Password"]),
                 EnableSsl = true
             };
 
             services.AddSingleton(configuration);
+            services.AddSingleton(httpClient);
 
             services.AddScoped(p => smptClient);
 

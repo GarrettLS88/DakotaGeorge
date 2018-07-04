@@ -6,14 +6,18 @@
     top: 0;
     left: 0;
     z-index: 2;
-    background: linear-gradient(transparentize(settings(layout, color, black), 0.5), transparent);
 
-    &__logo {
+    &__name {
+        display: block;
         height: 100%;
-        padding: rem(20);
 
-        @include media("<=small") {
-            display: none;
+        &-inner {
+            display: flex;
+            height: 100%;
+
+            span {
+                margin: auto 0;
+            }
         }
     }
 

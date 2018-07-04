@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace DakotaPortfolio.WebApp.ViewModels
 {
-    public class HomeIndexVM
+    public class HomeIndexVM : GenericHomeVM
     {
     }
 }

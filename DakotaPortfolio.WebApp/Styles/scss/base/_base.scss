@@ -15,15 +15,15 @@ h6 {
 }
 
 h1 {
-    font-size: em(settings(font, size, h1));
+    font-size: rem(settings(font, size, h1));
 }
 
 h2 {
-    font-size: em(settings(font, size, h2));
+    font-size: rem(settings(font, size, h2));
 }
 
 h3 {
-    font-size: em(settings(font, size, h3));
+    font-size: rem(settings(font, size, h3));
 }
 
 h4 {
