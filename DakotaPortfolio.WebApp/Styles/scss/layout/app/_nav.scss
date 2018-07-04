@@ -1,15 +1,22 @@
 ﻿.header {
     height: 70px;
+    text-transform: uppercase;
     color: settings(font, color, white);
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 2;
+    background-color: settings(layout, color, primary);
+    @include box-shadow();
 
     &__name {
         display: block;
         height: 100%;
+
+        @include media("<=small") {
+            display: none;
+        }
 
         &-inner {
             display: flex;
@@ -81,7 +88,6 @@
     nav {
         height: 100%;
         padding: 0 rem(16);
-        text-transform: uppercase;
 
         @include media("<=small") {
 
@@ -103,25 +109,6 @@
                 transform: translateX(0);
             }
         }
-    }
-
-    &.alt {
-        @include media(">small") {
-            color: settings(font, color, primary);
-
-            .header__links > li::after {
-                background: linear-gradient(90deg, darken(settings(layout, color, secondary), 10%), settings(layout, color, secondary));
-            }
-        }
-
-        @include media("<=small") {
-            .header__mobile {
-                color: settings(font, color, primary);
-            }
-        }
-
-        background: transparentize(settings(layout, color, white), 0.2);
-        @include box-shadow();
     }
 
     &__links {

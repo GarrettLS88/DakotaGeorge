@@ -2,7 +2,7 @@
     string controller = ViewContext.RouteData.Values["Controller"].ToString();
 }
 
-@if (controller == "Home")
+@if (controller != "Home")
 {
     <div class="header__padding"></div>
 }

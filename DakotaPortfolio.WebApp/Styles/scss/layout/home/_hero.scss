@@ -1,0 +1,13 @@
+﻿.hero {
+    display: block;
+    height: 100vh;
+
+    &__background {
+        display: block;
+        height: 100%;
+        background-image: url("http://via.placeholder.com/1920x1080");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
